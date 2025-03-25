@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vediyappan V - Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #0f0f0f, #1a1a2e, #16213e, #0f3460);
+            background-size: 400% 400%;
+            animation: backgroundShift 15s infinite ease-in-out;
+            z-index: -1;
+        }
+        @keyframes backgroundShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 1000;
+            transition: background 0.5s;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .navbar a:hover {
+            color: #00aaff;
+        }
+        section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            width: 100%;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .socials a {
+            margin: 10px;
+            font-size: 2rem;
+            color: white;
+            transition: 0.3s;
+        }
+        .socials a:hover {
+            color: #00aaff;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <section id="home" class="visible">
+        <div class="title">Welcome to My Portfolio</div>
+        <div class="subtitle">Explore my journey, skills, and projects that shape my future.</div>
+    </section>
+
+    <section id="about">
+        <div class="title">About Me</div>
+        <div class="subtitle">Hi, I'm Vediyappan V, a passionate Computer Science student specializing in AI, ML, and Ethical Hacking. I have worked on various AI-driven solutions, cybersecurity research, and automation projects. I thrive on solving real-world challenges through innovation.</div>
+    </section>
+
+    <section id="projects">
+        <div class="title">My Projects</div>
+        <div class="subtitle">
+            🚀 <b>SafeguardAI:</b> AI-based CCTV monitoring for workplace safety.<br>
+            🎤 <b>AI Sign Language:</b> Converting speech into sign language automatically.<br>
+            🧠 <b>Phonics Kit:</b> Helping dyslexic children with AI-driven phonics learning.<br>
+            📡 <b>LiDAR Room Mapping:</b> 2D LiDAR-based room dimension calculation.<br>
+            🔐 <b>CyberSec Tool:</b> A penetration testing toolkit for security analysis.<br>
+            📷 <b>3D Automation:</b> Converting 2D images into 3D models using AI.
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="title">Contact Me</div>
+        <div class="socials">
+            <a href="https://x.com/Vediyappan39324?s=09" target="_blank">🐦</a>
+            <a href="https://www.instagram.com/vediyappan__v" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="40">
+            </a>
+            <a href="mailto:vediv4619@gmail.com">📧</a>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("scroll", function() {
+            let sections = document.querySelectorAll("section");
+            sections.forEach(sec => {
+                let top = sec.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) {
+                    sec.classList.add("visible");
+                }
+            });
+        });
+
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 100 },
+                size: { value: 3 },
+                move: { speed: 3 },
+                line_linked: { enable: true, distance: 150 }
+            }
+        });
+    </script>
+</body>
+</html>
